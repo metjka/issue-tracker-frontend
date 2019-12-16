@@ -1,0 +1,17 @@
+$header-height: 56px;
+
+.main-container {
+  height: 100%;
+
+  .action-header {
+    margin: 10px;
+    height: $header-height;
+    box-sizing: content-box;
+  }
+
+  .issue-list {
+    max-height: calc(100% - #{$header-height});
+    overflow-y: auto;
+  }
+
+}

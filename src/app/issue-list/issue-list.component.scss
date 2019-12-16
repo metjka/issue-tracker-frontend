@@ -1,0 +1,31 @@
+@import '~@angular/material/theming';
+
+.issue-card {
+  @include mat-elevation(2);
+  margin: 5px;
+  max-width: 300px;
+  min-width: 250px;
+  max-height: 100px;
+  min-height: 50px;
+}
+
+.card-content {
+  min-height: 32px;
+}
+
+.flexim {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.action-row {
+  place-content: start start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .mat-select {
+    max-width: 100px;
+    margin-left: 10px;
+  }
+}

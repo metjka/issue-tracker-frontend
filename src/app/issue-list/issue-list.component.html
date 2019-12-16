@@ -1,0 +1,29 @@
+<div class="flexim">
+
+  <mat-card class="issue-card" *ngFor="let issue of issues">
+    <mat-card-content class="card-content">
+      <p>{{issue.title || 'empty'}}</p>
+      <p>{{issue.description || 'empty'}}</p>
+    </mat-card-content>
+    <mat-card-actions class="action-row">
+      <button mat-raised-button (click)="openEditDialog(issue)">Edit</button>
+      <mat-select [value]="issue.status" (valueChange)="statusChange($event, issue._id)">
+        <mat-option
+          [disabled]="true"
+          [value]="IssueStatus.OPEN">
+          {{IssueStatus.OPEN}}
+        </mat-option>
+        <mat-option
+          [disabled]="issue.status !== IssueStatus.OPEN"
+          [value]="IssueStatus.PENDING">
+          {{IssueStatus.PENDING}}
+        </mat-option>
+        <mat-option
+          [disabled]="issue.status !== IssueStatus.PENDING"
+          [value]="IssueStatus.CLOSED">
+          {{IssueStatus.CLOSED}}
+        </mat-option>
+      </mat-select>
+    </mat-card-actions>
+  </mat-card>
+</div>

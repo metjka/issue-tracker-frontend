@@ -1,0 +1,18 @@
+<form [formGroup]="issueFormGroup" class="issue-dialog">
+
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input formControlName="title" matInput>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea formControlName="description" matInput></textarea>
+  </mat-form-field>
+
+</form>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button color="primary" (click)="onOkClick()">Ok</button>
+</div>
